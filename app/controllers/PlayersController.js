@@ -1,6 +1,6 @@
 import { AppState } from "../AppState.js";
-import { Player } from "../models/Player.js";
 import { playersService } from "../services/PlayersService.js";
+
 
 
 
@@ -11,13 +11,22 @@ export class PlayersController {
   }
 
 
+  scorePoint() {
+
+  }
+
+  // this adds a different player by their name to each of the card-templates
+
+  addPlayer(playerName) {
+    const players = AppState.players
+    event?.preventDefault()
+    playersService.addPlayer(playerName)
+    this.drawPlayers()
+  }
 
 
 
-
-
-
-
+  // this draws the player card template to the screen but only one player repeatedly
   drawPlayers() {
     const players = AppState.players
     let playersContent = ''
@@ -28,8 +37,6 @@ export class PlayersController {
     const playersElm = document.getElementById('player-cards')
     playersElm.innerHTML = playersContent
   }
-
-
 
 
 }
