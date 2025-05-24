@@ -11,8 +11,10 @@ export class PlayersController {
   }
 
 
-  scorePoint() {
-
+  scorePoint(playerName) {
+    playersService.changeTotalScored(playerName, 1)
+    console.log('Players score increase!')
+    this.drawPlayers()
   }
 
   // this adds a different player by their name to each of the card-templates
