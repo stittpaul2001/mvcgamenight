@@ -9,7 +9,7 @@ class PlayersService {
 
   changeTotalScored(playerName, total) {
     const players = AppState.players
-    const playerFound = players.find(h1 => h1.name == playerName)
+    const playerFound = players.find(span => span.name == playerName)
     playerFound.score += total
     if (playerFound.score >= 0) playerFound.score = 0
 

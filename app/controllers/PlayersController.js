@@ -10,9 +10,14 @@ export class PlayersController {
     this.drawPlayers()
   }
 
+  reduceScore(playerName) {
+    playersService.changeTotalScored(playerName, -1)
+    console.log('Players score reduced')
+    this.drawPlayers()
+  }
 
   scorePoint(playerName) {
-    playersService.changeTotalScored(playerName, 1)
+    playersService.changeTotalScored(playerName, +1)
     console.log('Players score increase!')
     this.drawPlayers()
   }
