@@ -24,9 +24,8 @@ export class PlayersController {
 
   // this adds a different player by their name to each of the card-templates
 
-  addPlayer(playerName, score = 0) {
+  addPlayer(playerName) {
     const players = AppState.players
-    const newPlayer = AppState.players
     event?.preventDefault()
     playersService.addPlayer(playerName)
     this.drawPlayers()
