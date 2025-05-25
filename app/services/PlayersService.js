@@ -7,12 +7,19 @@ class PlayersService {
 
   }
 
-  changeTotalScored(playerName, total) {
-    const players = AppState.players
-    const playerFound = players.find(span => span.name == playerName)
-    playerFound.score += total
-    if (playerFound.score >= 0) playerFound.score = 0
+  increaseScore(playerName) {
+    console.log('service', playerName);
+    const playerScoreIncrease = AppState.players.find(player => player.name == playerName)
+    playerScoreIncrease.score++
+    console.log(playerScoreIncrease)
+  }
 
+  reduceScore(playerName) {
+    console.log('service', playerName)
+    const playerScoreReduce = AppState.players.find(player => player.name == playerName)
+    playerScoreReduce.score--
+    if (playerScoreReduce.score < 0) playerScoreReduce.score = 0
+    console.log(playerScoreReduce)
   }
 
   addPlayer(playerName) {

@@ -11,21 +11,22 @@ export class PlayersController {
   }
 
   reduceScore(playerName) {
-    playersService.changeTotalScored(playerName, -1)
+    playersService.reduceScore(playerName)
     console.log('Players score reduced')
     this.drawPlayers()
   }
 
   scorePoint(playerName) {
-    playersService.changeTotalScored(playerName, +1)
+    playersService.increaseScore(playerName)
     console.log('Players score increase!')
     this.drawPlayers()
   }
 
   // this adds a different player by their name to each of the card-templates
 
-  addPlayer(playerName) {
+  addPlayer(playerName, score = 0) {
     const players = AppState.players
+    const newPlayer = AppState.players
     event?.preventDefault()
     playersService.addPlayer(playerName)
     this.drawPlayers()

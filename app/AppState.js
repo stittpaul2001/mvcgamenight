@@ -8,6 +8,7 @@ class ObservableAppState extends EventEmitter {
   examples = []
 
 
+
   players = [
     new Player('Paul'),
     new Player('Katie'),
